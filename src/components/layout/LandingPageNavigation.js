@@ -11,11 +11,10 @@ const Nav = styled.nav`
   font-size: 1.6rem;
 `;
 
-const LogoBox = styled.div``;
-
-const Logo = styled.span`
-  font-size: 3rem;
-  font-weight: 700;
+const Logo = styled(NavLink)`
+  font-size: 2.4rem;
+  font-weight: 600;
+  text-decoration: none;
 `;
 
 const NavList = styled.ul`
@@ -55,9 +54,7 @@ const navigationItems = [
 const LandingPageNavigation = () => {
   return (
     <Nav>
-      <LogoBox>
-        <Logo>RealUsers</Logo>
-      </LogoBox>
+      <Logo to="/">realUsers</Logo>
       <NavList>
         {navigationItems.map((nav) => (
           <NavListItem key={nav.title}>
