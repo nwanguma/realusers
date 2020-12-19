@@ -7,11 +7,13 @@ import Product from "../pages/landing/Product";
 import Pricing from "../pages/landing/Pricing";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import Dashboard from "../features/dashboard/index";
 
 const AppRouter = () => {
   return (
     <Router>
       <Switch>
+        <Route path="/dashboard" component={Dashboard} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <Route path="/pricing" component={Pricing} />
