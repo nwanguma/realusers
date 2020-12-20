@@ -1,7 +1,7 @@
 import Overview from "../features/overview/index";
 import Promotions from "../features/promotions/index";
 import Earnings from "../features/earnings/index";
-import Bounty from "../features/bounty/index";
+import Bounties from "../features/bounties/index";
 import Settings from "../features/settings/index";
 import ProductSpotlight from "../features/productSpotlight/index";
 
@@ -25,10 +25,10 @@ const routes = [
     component: Earnings,
   },
   {
-    title: "bounty",
-    path: "/dashboard/bounty",
+    title: "bounties",
+    path: "/dashboard/bounties",
     exact: true,
-    component: Bounty,
+    component: Bounties,
   },
   {
     title: "settings",
@@ -38,7 +38,7 @@ const routes = [
   },
   {
     title: "spotlight",
-    path: "/dashboard/spotlight",
+    path: "/dashboard/product-of-the-week",
     exact: true,
     component: ProductSpotlight,
   },

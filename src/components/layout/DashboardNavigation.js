@@ -1,73 +1,88 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
+import logo from "../../assets/images/logo.png";
+
 const Nav = styled.nav`
-  height: 9rem;
-  padding: 0 10%;
+  height: 8rem;
+  padding: 0 5%;
   position: sticky;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
+  color: #3d3d3d;
 `;
 
-const Logo = styled(NavLink)`
-  font-size: 2.4rem;
-  font-weight: 600;
-  text-decoration: none;
+const LogoBox = styled(NavLink)`
+  width: 3rem;
+  height: 3rem;
+  margin-right: 3%;
+`;
+
+const Logo = styled.img`
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 `;
 
 const NavList = styled.ul`
   list-style: none;
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
 `;
 
 const NavListItem = styled.li`
   display: inline-block;
-
-  &:not(:last-child) {
-    margin-right: 4rem;
-  }
 `;
 
 const NavListItemLink = styled(NavLink)`
   text-decoration: none;
-`;
+  color: inherit;
 
-const NavAction = styled.div`
-  display: flex;
-  flex: 0 0 15%;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const NavActionItem = styled.a`
-  text-decoration: none;
+  &.active {
+    text-decoration: underline;
+  }
 `;
 
 const navigationItems = [
-  { title: "Pricing", path: "/pricing" },
-  { title: "Product", path: "/product" },
-  { title: "Promotions", path: "/promotions" },
-  { title: "About", path: "/about" },
+  { title: "Home", path: "/dashboard", exact: true },
+  { title: "Promotions", path: "/dashboard/promotions" },
+  { title: "Bounties", path: "/dashboard/bounties" },
+  { title: "Product of the week", path: "/dashboard/product-of-the-week" },
+  { title: "Earnings", path: "/dashboard/earnings" },
 ];
 
 const LandingPageNavigation = () => {
   return (
     <Nav>
-      <Logo to="/">realUsers</Logo>
+      <LogoBox to="/">
+        <Logo src={logo} />
+      </LogoBox>
       <NavList>
         {navigationItems.map((nav) => (
           <NavListItem key={nav.title}>
-            <NavListItemLink to={nav.path} activeClassName="active">
+            <NavListItemLink
+              to={nav.path}
+              activeClassName="active"
+              exact={nav.exact}
+            >
               {nav.title}
             </NavListItemLink>
           </NavListItem>
         ))}
+        <NavListItem>
+          <NavListItemLink to="/dashboard/settings" activeClassName="active">
+            Settings
+          </NavListItemLink>
+        </NavListItem>
+        <NavListItem>
+          <NavListItemLink to="/dashboard/account" activeClassName="active">
+            Account
+          </NavListItemLink>
+        </NavListItem>
       </NavList>
-      <NavAction>
-        <NavActionItem href="/some-login">Login</NavActionItem>
-        <NavActionItem href="/some-register">Register</NavActionItem>
-      </NavAction>
     </Nav>
   );
 };
