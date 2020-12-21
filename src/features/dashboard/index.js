@@ -15,10 +15,12 @@ const DashboardMainWrapper = styled.div`
 const DashboardContentWrapper = styled.div`
   width: 65%;
   margin: 0 auto;
+  background-color: #f7f7ff;
 `;
 
 const ContentWrapper = styled.div`
   min-height: 100vh;
+  padding-top: 3rem;
 `;
 
 const Dashboard = () => {

@@ -20,7 +20,6 @@ const Section = styled.section`
 const SectionSpotlight = styled(Section)`
   display: flex;
   justify-content: space-between;
-  padding-top: 3rem;
   padding-bottom: 1rem;
 `;
 
