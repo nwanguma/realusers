@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import CopyToClipboard from "../../components/common/CopyToClipboard";
 import gift from "../../assets/images/gift.svg";
+import productlogo from "../../assets/images/d-company.svg";
 import appstorebadge from "../../assets/images/appstorebadge.svg";
 import playstorebadge from "../../assets/images/playstorebadge.svg";
 
@@ -14,6 +15,77 @@ const Section = styled.section`
   min-height: 30rem;
   padding: 0 2rem;
   border-bottom: 1px dashed rgba(73, 94, 75, 0.2);
+`;
+
+const SectionSpotlight = styled(Section)`
+  display: flex;
+  justify-content: space-between;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+`;
+
+const SectionSpotlightCarousel = styled.div`
+  flex: 0 0 40%;
+`;
+
+const SectionSpotlightContent = styled.div`
+  flex: 0 0 50%;
+  display: flex;
+`;
+
+const SectionSpotlightContentLogoBox = styled.div`
+  min-width: 9rem;
+  height: 9rem;
+  padding: 1rem;
+  border-radius: 6px;
+  background: #fff;
+  margin-right: 3rem;
+`;
+
+const SectionSpotlightContentLogo = styled.img`
+  width: 100%;
+  height: 100%;
+`;
+
+const SectionSpotlightContentText = styled.div`
+  flex: 0 0 calc(100% - 9rem);
+`;
+
+const SectionSpotlightContentTextHeading = styled.h3`
+  font-size: 3rem;
+  margin-bottom: 2rem;
+`;
+
+const SectionSpotlightContentTextSecondary = styled.p`
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+`;
+
+const SectionSpotlightContentTextTags = styled.div`
+  margin-top: 1.5rem;
+`;
+
+const SectionSpotlightContentTextTagsItem = styled.span`
+  display: inline-block;
+  padding: 0.5rem;
+  border: 1px solid #c4c4c4;
+  font-size: 1.3rem;
+  color: #77869e;
+
+  &:not(:last-child) {
+    margin-right: 0.7rem;
+  }
+`;
+
+const InAppNavigation = styled(Link)`
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.3rem;
+  color: blue;
+`;
+
+const SectionSpotlightContentTextLink = styled(InAppNavigation)`
+  margin-top: 1.5rem;
 `;
 
 const SectionEarnings = styled(Section)`
@@ -39,10 +111,7 @@ const SectionEarningsEarning = styled.h2`
   margin-bottom: 1rem;
 `;
 
-const SectionEarningsLink = styled(Link)`
-  text-decoration: none;
-  display: inline-block;
-  color: inherit;
+const SectionEarningsLink = styled(InAppNavigation)`
   margin-bottom: 1.5rem;
 `;
 
@@ -58,6 +127,38 @@ const ShareContainer = styled.div`
 
 const ShareContainerHeading = styled.h3`
   margin-bottom: 1rem;
+`;
+
+const ShareContainerText = styled.p`
+  display: block;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: -0.3px;
+  color: #77869e;
+  margin-bottom: 3rem;
+
+  @media ${({ theme }) => theme.mediaQueries.tablet} {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+`;
+
+const ShareContainerTextSecondary = styled.span`
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.3px;
+  color: #042c5c;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+
+  @media ${({ theme }) => theme.mediaQueries.tablet} {
+    display: block;
+    margin-bottom: 0.8rem;
+  }
 `;
 
 const ShareContainerContent = styled.div`
@@ -86,80 +187,14 @@ const ImageContainer = styled.div`
 
 const Share = styled.div`
   flex: 1;
-  /* margin-bottom: 2.5rem; */
 
   @media ${({ theme }) => theme.mediaQueries.tablet} {
     flex: 1;
     margin-bottom: 2rem;
   }
-
-  & > label {
-    display: block;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 20px;
-    letter-spacing: -0.3px;
-    color: #77869e;
-    margin-bottom: 3rem;
-
-    @media ${({ theme }) => theme.mediaQueries.tablet} {
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
-    }
-  }
-
-  & > span {
-    font-style: normal;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: -0.3px;
-    color: #042c5c;
-    margin-bottom: 0.5rem;
-    display: inline-block;
-
-    @media ${({ theme }) => theme.mediaQueries.tablet} {
-      display: block;
-      margin-bottom: 0.8rem;
-    }
-  }
-
-  & > input {
-    background: #f5faf6;
-    border: 1px solid rgba(119, 134, 158, 0.3);
-    border-radius: 4px;
-    height: 35px;
-    width: 270px;
-    border-radius: 4px;
-    padding: 1.5rem;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 22px;
-    color: #77869e;
-
-    @media ${({ theme }) => theme.mediaQueries.tablet} {
-      width: 82%;
-      height: 3.5rem;
-    }
-
-    &::placeholder {
-      font-style: normal;
-      font-weight: normal;
-      font-size: 16px;
-      line-height: 22px;
-      color: #77869e;
-
-      @media ${({ theme }) => theme.mediaQueries.tablet} {
-        font-size: 1.4rem;
-      }
-    }
-  }
 `;
 
 const BadgeContainer = styled.div`
-  /* text-align: center; */
   margin-top: 2.5rem;
 `;
 
@@ -173,14 +208,44 @@ const Badge = styled.img`
 
 const SectionPromotions = styled(Section)``;
 
-const SectionSpotlight = styled(Section)``;
-
 const SectionBounties = styled(Section)``;
 
 const OverviewPage = () => {
   return (
     <OverviewPageWrapper>
-      <SectionSpotlight></SectionSpotlight>
+      <SectionSpotlight>
+        <SectionSpotlightContent>
+          <SectionSpotlightContentLogoBox>
+            <SectionSpotlightContentLogo src={productlogo} />
+          </SectionSpotlightContentLogoBox>
+          <SectionSpotlightContentText>
+            <SectionSpotlightContentTextHeading>
+              Drilla
+            </SectionSpotlightContentTextHeading>
+            <SectionSpotlightContentTextSecondary>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam
+              quos, repellat, omnis voluptatum officiis dolorum ducimus.
+            </SectionSpotlightContentTextSecondary>
+            <SectionSpotlightContentTextTags>
+              <SectionSpotlightContentTextTagsItem>
+                crypto
+              </SectionSpotlightContentTextTagsItem>
+              <SectionSpotlightContentTextTagsItem>
+                fintech
+              </SectionSpotlightContentTextTagsItem>
+              <SectionSpotlightContentTextTagsItem>
+                tech
+              </SectionSpotlightContentTextTagsItem>
+            </SectionSpotlightContentTextTags>
+            <SectionSpotlightContentTextLink to="/dashboard/product-of-the-week">
+              learn more &#8594;
+            </SectionSpotlightContentTextLink>
+          </SectionSpotlightContentText>
+        </SectionSpotlightContent>
+        <SectionSpotlightCarousel>
+          this is the carousel
+        </SectionSpotlightCarousel>
+      </SectionSpotlight>
       <SectionEarnings>
         <SectionEarningsContent>
           <SectionEarningsHeading>Your earnings:</SectionEarningsHeading>
@@ -200,10 +265,12 @@ const OverviewPage = () => {
             </ImageContainer>
             <Share>
               <ShareContainerHeading>Share & Earn</ShareContainerHeading>
-              <label for="share">
-                Refer Friends and get $ for each referral
-              </label>
-              <span>Copy shareable link</span>
+              <ShareContainerText>
+                Refer friends and get $ for each referral
+              </ShareContainerText>
+              <ShareContainerTextSecondary>
+                Copy shareable link
+              </ShareContainerTextSecondary>
               <CopyToClipboard text="sksksksksks" />
               <BadgeContainer>
                 <Badge src={appstorebadge} alt="" />
