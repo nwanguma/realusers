@@ -1,11 +1,14 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 
 import CopyToClipboard from "../../components/common/CopyToClipboard";
 import gift from "../../assets/images/gift.svg";
 import productlogo from "../../assets/images/d-company.svg";
 import appstorebadge from "../../assets/images/appstorebadge.svg";
 import playstorebadge from "../../assets/images/playstorebadge.svg";
+import meerkat from "../../assets/images/meerkat.jpg";
 
 const OverviewPageWrapper = styled.div`
   min-height: 100vh;
@@ -242,7 +245,18 @@ const OverviewPage = () => {
           </SectionSpotlightContentText>
         </SectionSpotlightContent>
         <SectionSpotlightCarousel>
-          this is the carousel
+          <Carousel>
+            <div>
+              <img src={meerkat} alt="" />
+              {/* <p className="legend">Legend 1</p> */}
+            </div>
+            <div>
+              <img src={meerkat} alt="" />
+            </div>
+            <div>
+              <img src={meerkat} alt="" />
+            </div>
+          </Carousel>
         </SectionSpotlightCarousel>
       </SectionSpotlight>
       <SectionEarnings>
