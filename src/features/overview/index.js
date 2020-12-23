@@ -226,7 +226,7 @@ const SectionPromotionsContent = styled.div`
 const SectionPromotionsItem = styled.div`
   display: flex;
   align-items: center;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
 `;
 
@@ -258,7 +258,73 @@ const SectionPromotionsLink = styled(InAppNavigation)`
   margin-top: 2rem;
 `;
 
-const SectionBounties = styled(Section)``;
+const SectionBounties = styled(Section)`
+  padding-top: 3rem;
+  height: 38rem;
+`;
+
+const SectionBountiesContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+`;
+
+const SectionBountiesItem = styled.div`
+  flex: 0 0 30%;
+  height: 28rem;
+  perspective: 1500px;
+  -moz-perspective: 1500px;
+  position: relative;
+
+  &:hover .side--front {
+    transform: rotateY(0);
+  }
+
+  &:hover .side--back {
+    transform: rotateY(180deg);
+  }
+`;
+
+const SectionBountiesItemSide = styled.div`
+  height: 28rem;
+  padding: 1.5rem 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: 1s all;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+`;
+
+const SectionBountiesItemSideFront = styled(SectionBountiesItemSide)`
+  transform: rotateY(180deg);
+  background: purple;
+  color: white;
+`;
+
+const SectionBountiesItemSideBack = styled(SectionBountiesItemSide)`
+  transform: rotateY(0);
+`;
+
+const SectionBountiesItemHeader = styled.h3`
+  margin-bottom: 1.5rem;
+`;
+
+const SectionBountiesItemImage = styled.img`
+  width: 4rem;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+`;
+
+const SectionBountiesItemText = styled.p`
+  font-size: 1.3rem;
+  line-height: 2rem;
+`;
+
+const SectionBountiesLink = styled(InAppNavigation)`
+  margin-top: 2rem;
+`;
 
 const OverviewPage = () => {
   return (
@@ -440,7 +506,85 @@ const OverviewPage = () => {
           go to promotions &#8594;
         </SectionPromotionsLink>
       </SectionPromotions>
-      <SectionBounties></SectionBounties>
+      <SectionBounties>
+        <SectionBountiesContent>
+          <SectionBountiesItem>
+            <SectionBountiesItemSideFront className="side--front">
+              <SectionBountiesItemHeader>Drilla</SectionBountiesItemHeader>
+              <SectionBountiesItemImage
+                src={productlogo}
+              ></SectionBountiesItemImage>
+              <SectionBountiesItemText>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Numquam quos, repellat, omnis voluptatum officiis dolorum
+                ducimus.
+              </SectionBountiesItemText>
+            </SectionBountiesItemSideFront>
+            <SectionBountiesItemSideBack className="side--back">
+              <SectionBountiesItemHeader>Drilla</SectionBountiesItemHeader>
+              <SectionBountiesItemImage
+                src={productlogo}
+              ></SectionBountiesItemImage>
+              <SectionBountiesItemText>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Numquam quos, repellat, omnis voluptatum officiis dolorum
+                ducimus.
+              </SectionBountiesItemText>
+            </SectionBountiesItemSideBack>
+          </SectionBountiesItem>
+          <SectionBountiesItem>
+            <SectionBountiesItemSideFront className="side--front">
+              <SectionBountiesItemHeader>Drilla</SectionBountiesItemHeader>
+              <SectionBountiesItemImage
+                src={productlogo}
+              ></SectionBountiesItemImage>
+              <SectionBountiesItemText>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Numquam quos, repellat, omnis voluptatum officiis dolorum
+                ducimus.
+              </SectionBountiesItemText>
+            </SectionBountiesItemSideFront>
+            <SectionBountiesItemSideBack className="side--back">
+              <SectionBountiesItemHeader>Drilla</SectionBountiesItemHeader>
+              <SectionBountiesItemImage
+                src={productlogo}
+              ></SectionBountiesItemImage>
+              <SectionBountiesItemText>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Numquam quos, repellat, omnis voluptatum officiis dolorum
+                ducimus.
+              </SectionBountiesItemText>
+            </SectionBountiesItemSideBack>
+          </SectionBountiesItem>
+          <SectionBountiesItem>
+            <SectionBountiesItemSideFront className="side--front">
+              <SectionBountiesItemHeader>Drilla</SectionBountiesItemHeader>
+              <SectionBountiesItemImage
+                src={productlogo}
+              ></SectionBountiesItemImage>
+              <SectionBountiesItemText>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Numquam quos, repellat, omnis voluptatum officiis dolorum
+                ducimus.
+              </SectionBountiesItemText>
+            </SectionBountiesItemSideFront>
+            <SectionBountiesItemSideBack className="side--back">
+              <SectionBountiesItemHeader>Drilla</SectionBountiesItemHeader>
+              <SectionBountiesItemImage
+                src={productlogo}
+              ></SectionBountiesItemImage>
+              <SectionBountiesItemText>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Numquam quos, repellat, omnis voluptatum officiis dolorum
+                ducimus.
+              </SectionBountiesItemText>
+            </SectionBountiesItemSideBack>
+          </SectionBountiesItem>
+        </SectionBountiesContent>
+        <SectionBountiesLink to="/dashboard/bounties">
+          go to bounties &#8594;
+        </SectionBountiesLink>
+      </SectionBounties>
     </OverviewPageWrapper>
   );
 };
