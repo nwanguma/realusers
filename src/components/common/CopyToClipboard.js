@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
+import buttonshareicon from "../../assets/images/buttonshareicon.svg";
+
 const Container = styled.div`
   flex: 1;
 `;
@@ -45,7 +47,7 @@ const CopyToClipboardInput = styled.input`
 `;
 
 const ButtonShare = styled.button`
-  background-color: #409046;
+  background-color: #312aaa;
   height: 3.8rem;
   width: 50px;
   border-radius: 4px;
@@ -53,7 +55,7 @@ const ButtonShare = styled.button`
   border: 0;
   outline: 0;
   cursor: pointer;
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTkiIHZpZXdCb3g9IjAgMCAxOCAxOSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE1LjUgOC4yNUg4Ljc2MzY3QzcuOTM1MjQgOC4yNSA3LjI1IDguOTIxNTcgNy4yNSA5Ljc1VjE2LjVDNy4yNSAxNy4zMjg0IDcuOTIxNTcgMTggOC43NSAxOEgxNS41QzE2LjMyODQgMTggMTcgMTcuMzI4NCAxNyAxNi41VjkuNzVDMTcgOC45MjE1NyAxNi4zMjg0IDguMjUgMTUuNSA4LjI1WiIgZmlsbD0iIzQwOTA0NiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMy4yNSAxMS4yNUgyLjVDMi4xMDIxOCAxMS4yNSAxLjcyMDY0IDExLjA5MiAxLjQzOTM0IDEwLjgxMDdDMS4xNTgwNCAxMC41Mjk0IDEgMTAuMTQ3OCAxIDkuNzVWM0MxIDIuNjAyMTggMS4xNTgwNCAyLjIyMDY0IDEuNDM5MzQgMS45MzkzNEMxLjcyMDY0IDEuNjU4MDQgMi4xMDIxOCAxLjUgMi41IDEuNUg5LjI1QzkuNjQ3ODMgMS41IDEwLjAyOTQgMS42NTgwNCAxMC4zMTA3IDEuOTM5MzRDMTAuNTkyIDIuMjIwNjQgMTAuNzUgMi42MDIxOCAxMC43NSAzVjMuNzUiIGZpbGw9IiM0MDkwNDYiLz4KPHBhdGggZD0iTTMuMjUgMTEuMjVIMi41QzIuMTAyMTggMTEuMjUgMS43MjA2NCAxMS4wOTIgMS40MzkzNCAxMC44MTA3QzEuMTU4MDQgMTAuNTI5NCAxIDEwLjE0NzggMSA5Ljc1VjNDMSAyLjYwMjE4IDEuMTU4MDQgMi4yMjA2NCAxLjQzOTM0IDEuOTM5MzRDMS43MjA2NCAxLjY1ODA0IDIuMTAyMTggMS41IDIuNSAxLjVIOS4yNUM5LjY0NzgyIDEuNSAxMC4wMjk0IDEuNjU4MDQgMTAuMzEwNyAxLjkzOTM0QzEwLjU5MiAyLjIyMDY0IDEwLjc1IDIuNjAyMTggMTAuNzUgM1YzLjc1IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=");
+  background-image: url(${buttonshareicon});
   background-position: center;
   background-repeat: no-repeat;
   background-size: 2rem;

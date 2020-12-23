@@ -9,6 +9,9 @@ import productlogo from "../../assets/images/d-company.svg";
 import appstorebadge from "../../assets/images/appstorebadge.svg";
 import playstorebadge from "../../assets/images/playstorebadge.svg";
 import meerkat from "../../assets/images/meerkat.jpg";
+import twitterMain from "../../assets/images/twittermain.svg";
+import instagramMain from "../../assets/images/instagrammain.svg";
+import youtubeMain from "../../assets/images/youtubemain.svg";
 
 const OverviewPageWrapper = styled.div`
   min-height: 100vh;
@@ -16,7 +19,7 @@ const OverviewPageWrapper = styled.div`
 
 const Section = styled.section`
   min-height: 30rem;
-  padding: 0 2rem;
+  padding: 0 4rem;
   border-bottom: 1px dashed rgba(73, 94, 75, 0.2);
 `;
 
@@ -208,7 +211,52 @@ const Badge = styled.img`
   }
 `;
 
-const SectionPromotions = styled(Section)``;
+const SectionPromotions = styled(Section)`
+  padding-top: 3rem;
+  height: 42rem;
+`;
+
+const SectionPromotionsContent = styled.div`
+  display: grid;
+  grid-gap: 3rem;
+  grid-template-rows: repeat(2, 15rem);
+  grid-template-columns: repeat(2, 1fr);
+`;
+
+const SectionPromotionsItem = styled.div`
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+`;
+
+const SectionPromotionsItemImage = styled.img`
+  width: 4rem;
+  display: block;
+  margin-right: 2rem;
+`;
+
+const SectionPromotionsItemContent = styled.div`
+  font-size: 1.3rem;
+  line-height: 2rem;
+`;
+
+const SectionPromotionsItemContentHeading = styled.h4`
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+`;
+
+const SectionPromotionsItemContentAbout = styled.p`
+  margin-bottom: 1rem;
+`;
+
+const SectionPromotionsItemContentPromotion = styled.p``;
+
+const SectionPromotionsItemContentLink = styled.a``;
+
+const SectionPromotionsLink = styled(InAppNavigation)`
+  margin-top: 2rem;
+`;
 
 const SectionBounties = styled(Section)``;
 
@@ -293,7 +341,105 @@ const OverviewPage = () => {
           </ShareContainerContent>
         </ShareContainer>
       </SectionEarnings>
-      <SectionPromotions></SectionPromotions>
+      <SectionPromotions>
+        <SectionPromotionsContent>
+          <SectionPromotionsItem>
+            <SectionPromotionsItemImage
+              src={productlogo}
+            ></SectionPromotionsItemImage>
+            <SectionPromotionsItemContent>
+              <SectionPromotionsItemContentHeading>
+                Drilla
+              </SectionPromotionsItemContentHeading>
+              <SectionPromotionsItemContentAbout>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Numquam quos, repellat, omnis voluptatum officiis dolorum
+                ducimus.
+              </SectionPromotionsItemContentAbout>
+              <SectionPromotionsItemContentPromotion>
+                Follow this account win $$
+              </SectionPromotionsItemContentPromotion>
+              <SectionPromotionsItemContentLink
+                href="drilla.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              ></SectionPromotionsItemContentLink>
+            </SectionPromotionsItemContent>
+          </SectionPromotionsItem>
+          <SectionPromotionsItem>
+            <SectionPromotionsItemImage
+              src={youtubeMain}
+            ></SectionPromotionsItemImage>
+            <SectionPromotionsItemContent>
+              <SectionPromotionsItemContentHeading>
+                @tochistry
+              </SectionPromotionsItemContentHeading>
+              <SectionPromotionsItemContentAbout>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Numquam quos, repellat, omnis voluptatum officiis dolorum
+                ducimus.
+              </SectionPromotionsItemContentAbout>
+              <SectionPromotionsItemContentPromotion>
+                Follow this account win $$
+              </SectionPromotionsItemContentPromotion>
+              <SectionPromotionsItemContentLink
+                href="drilla.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              ></SectionPromotionsItemContentLink>
+            </SectionPromotionsItemContent>
+          </SectionPromotionsItem>
+          <SectionPromotionsItem>
+            <SectionPromotionsItemImage
+              src={instagramMain}
+            ></SectionPromotionsItemImage>
+            <SectionPromotionsItemContent>
+              <SectionPromotionsItemContentHeading>
+                @theblackesper
+              </SectionPromotionsItemContentHeading>
+              <SectionPromotionsItemContentAbout>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Numquam quos, repellat, omnis voluptatum officiis dolorum
+                ducimus.
+              </SectionPromotionsItemContentAbout>
+              <SectionPromotionsItemContentPromotion>
+                Follow this account win $$
+              </SectionPromotionsItemContentPromotion>
+              <SectionPromotionsItemContentLink
+                href="drilla.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              ></SectionPromotionsItemContentLink>
+            </SectionPromotionsItemContent>
+          </SectionPromotionsItem>
+          <SectionPromotionsItem>
+            <SectionPromotionsItemImage
+              src={twitterMain}
+            ></SectionPromotionsItemImage>
+            <SectionPromotionsItemContent>
+              <SectionPromotionsItemContentHeading>
+                @tochistry
+              </SectionPromotionsItemContentHeading>
+              <SectionPromotionsItemContentAbout>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Numquam quos, repellat, omnis voluptatum officiis dolorum
+                ducimus.
+              </SectionPromotionsItemContentAbout>
+              <SectionPromotionsItemContentPromotion>
+                Follow this account win $$
+              </SectionPromotionsItemContentPromotion>
+              <SectionPromotionsItemContentLink
+                href="drilla.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              ></SectionPromotionsItemContentLink>
+            </SectionPromotionsItemContent>
+          </SectionPromotionsItem>
+        </SectionPromotionsContent>
+        <SectionPromotionsLink to="/dashboard/promotions">
+          go to promotions &#8594;
+        </SectionPromotionsLink>
+      </SectionPromotions>
       <SectionBounties></SectionBounties>
     </OverviewPageWrapper>
   );
