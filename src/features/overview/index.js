@@ -299,8 +299,6 @@ const SectionBountiesItemSide = styled.div`
 
 const SectionBountiesItemSideFront = styled(SectionBountiesItemSide)`
   transform: rotateY(180deg);
-  background: purple;
-  color: white;
 `;
 
 const SectionBountiesItemSideBack = styled(SectionBountiesItemSide)`
