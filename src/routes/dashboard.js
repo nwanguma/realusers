@@ -3,6 +3,7 @@ import Promotions from "../features/promotions/index";
 import Earnings from "../features/earnings/index";
 import Bounties from "../features/bounties/index";
 import Settings from "../features/settings/index";
+import Account from "../features/account/index";
 import ProductSpotlight from "../features/productSpotlight/index";
 
 const routes = [
@@ -17,6 +18,12 @@ const routes = [
     path: "/dashboard/promotions",
     exact: true,
     component: Promotions,
+  },
+  {
+    title: "account",
+    path: "/dashboard/account",
+    exact: true,
+    component: Account,
   },
   {
     title: "earnings",
